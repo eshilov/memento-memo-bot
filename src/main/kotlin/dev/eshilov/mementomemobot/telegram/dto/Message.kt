@@ -1,4 +1,4 @@
-package dev.eshilov.mementomemobot.dto
+package dev.eshilov.mementomemobot.telegram.dto
 
 data class Message(
     val messageId: Long,
