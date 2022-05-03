@@ -1,16 +1,9 @@
-package dev.eshilov.mementomemobot
+package dev.eshilov.mementomemobot.process
 
 import dev.eshilov.mementomemobot.config.AppProps
-import dev.eshilov.mementomemobot.meme.MemeEntity
-import dev.eshilov.mementomemobot.meme.MemeRepository
-import dev.eshilov.mementomemobot.telegram.TelegramBotApi
-import dev.eshilov.mementomemobot.telegram.dto.AnswerCallbackQueryRequest
-import dev.eshilov.mementomemobot.telegram.dto.DeleteMessageRequest
-import dev.eshilov.mementomemobot.telegram.dto.SendMessageRequest
-import dev.eshilov.mementomemobot.telegram.dto.Update
+import dev.eshilov.mementomemobot.telegram.model.Update
 import org.slf4j.LoggerFactory
 import org.springframework.stereotype.Component
-import java.time.ZonedDateTime.now
 
 @Component
 class UpdateProcessor(
