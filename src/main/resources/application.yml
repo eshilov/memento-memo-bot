@@ -5,12 +5,13 @@ spring:
     password: memento
 
 app:
-  batch-size: 2
-  timeout-seconds: 1
+  batch-size: 1
+  timeout-seconds: 30
   bot-token: ${BOT_TOKEN}
   max-submit-attempts: 2
-  receiver-chat-id: 391468704
-  sender-chat-id: 418177113
+  min-remind-frequency-minutes: 30
+  receiver-chat-id: ${RECEIVER_CHAT_ID}
+  sender-chat-id: ${SENDER_CHAT_ID}
   task-executor:
     max-pool-size: 3
     queue-capacity: 3

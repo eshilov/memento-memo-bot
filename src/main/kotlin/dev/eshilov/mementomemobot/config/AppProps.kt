@@ -10,6 +10,7 @@ data class AppProps(
     val timeoutSeconds: Int,
     val botToken: String,
     val maxSubmitAttempts: Int,
+    val minRemindFrequencyMinutes: Long,
     val senderChatId: Long,
     val receiverChatId: Long
 )
