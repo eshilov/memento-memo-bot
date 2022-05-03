@@ -10,7 +10,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskExecutor
 import org.springframework.web.client.RestTemplate
 
 @Configuration
-@EnableConfigurationProperties(TaskExecutorProps::class)
+@EnableConfigurationProperties(AppProps::class, TaskExecutorProps::class)
 class AppConfig(private val taskExecutorProps: TaskExecutorProps) {
 
     @Bean

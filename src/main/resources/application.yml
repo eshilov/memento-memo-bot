@@ -5,7 +5,11 @@ spring:
     password: memento
 
 app:
+  batch-size: 2
+  timeout-seconds: 1
+  bot-token: ${BOT_TOKEN}
+  max-submit-attempts: 2
   task-executor:
-    max-pool-size: 10
-    queue-capacity: 20
+    max-pool-size: 3
+    queue-capacity: 3
     keep-alive-seconds: 30
