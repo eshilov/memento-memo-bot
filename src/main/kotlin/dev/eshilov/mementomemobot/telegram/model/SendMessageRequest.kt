@@ -1,4 +1,4 @@
-package dev.eshilov.mementomemobot.telegram.dto
+package dev.eshilov.mementomemobot.telegram.model
 
 import com.fasterxml.jackson.annotation.JsonInclude
 
