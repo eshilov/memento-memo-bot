@@ -9,6 +9,8 @@ app:
   timeout-seconds: 1
   bot-token: ${BOT_TOKEN}
   max-submit-attempts: 2
+  receiver-chat-id: 391468704
+  sender-chat-id: 418177113
   task-executor:
     max-pool-size: 3
     queue-capacity: 3

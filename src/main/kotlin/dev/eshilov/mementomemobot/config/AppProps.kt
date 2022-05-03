@@ -9,5 +9,7 @@ data class AppProps(
     val batchSize: Int,
     val timeoutSeconds: Int,
     val botToken: String,
-    val maxSubmitAttempts: Int
+    val maxSubmitAttempts: Int,
+    val senderChatId: Long,
+    val receiverChatId: Long
 )
