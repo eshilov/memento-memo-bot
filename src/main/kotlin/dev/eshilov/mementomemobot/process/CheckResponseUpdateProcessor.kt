@@ -1,6 +1,6 @@
 package dev.eshilov.mementomemobot.process
 
-import dev.eshilov.mementomemobot.CheckAnswer
+import dev.eshilov.mementomemobot.remind.CheckAnswerOption
 import dev.eshilov.mementomemobot.config.AppProps
 import dev.eshilov.mementomemobot.meme.MemeEntity
 import dev.eshilov.mementomemobot.meme.MemeRepository
@@ -29,7 +29,7 @@ class CheckResponseUpdateProcessor(
 
     private fun isYesCheckResponse(update: Update): Boolean {
         val answer = update.callbackQuery?.data!!
-        return answer == CheckAnswer.YES.key
+        return answer == CheckAnswerOption.YES.key
     }
 
     private fun handleYesCheckResponse(update: Update) {
@@ -65,7 +65,7 @@ class CheckResponseUpdateProcessor(
     private fun notifySenderThatMemeViewed(meme: MemeEntity) {
         botApi.sendMessage(
             SendMessageRequest(
-                chatId = appProps.receiverChatId,
+                chatId = appProps.senderChatId,
                 text = "Котик посмотрел мем ${meme.content}",
                 replyMarkup = null
             )

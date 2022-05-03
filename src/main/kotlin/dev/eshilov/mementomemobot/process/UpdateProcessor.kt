@@ -29,6 +29,6 @@ class UpdateProcessor(
     }
 
     private fun isNewMemeRequest(update: Update): Boolean {
-        return update.message?.chat?.id == appProps.receiverChatId
+        return update.message?.chat?.id == appProps.senderChatId
     }
 }

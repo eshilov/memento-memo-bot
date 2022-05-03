@@ -1,8 +1,8 @@
-package dev.eshilov.mementomemobot
+package dev.eshilov.mementomemobot.fetch
 
 import dev.eshilov.mementomemobot.config.AppProps
-import dev.eshilov.mementomemobot.telegram.action.OperationPerformer
-import dev.eshilov.mementomemobot.telegram.dto.Update
+import dev.eshilov.mementomemobot.telegram.operation.BotApiOperationPerformer
+import dev.eshilov.mementomemobot.telegram.model.Update
 import org.slf4j.LoggerFactory
 import org.springframework.core.ParameterizedTypeReference
 import org.springframework.stereotype.Component
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component
 @Component
 class UpdateFetcher(
     private val appProps: AppProps,
-    private val operationPerformer: OperationPerformer
+    private val botApiOperationPerformer: BotApiOperationPerformer
 ) {
     companion object {
         private val logger = LoggerFactory.getLogger(UpdateFetcher::class.java)
@@ -24,7 +24,7 @@ class UpdateFetcher(
         )
 
         val operation = buildGetUpdatesOperation(offset)
-        val updates = operationPerformer.performGetOperation(
+        val updates = botApiOperationPerformer.performGetOperation(
             operation,
             object : ParameterizedTypeReference<List<Update>>() {}
         )
