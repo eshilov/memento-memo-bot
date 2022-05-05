@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:tc:postgresql:14.1-alpine://test
+    username: test
+    password: test
+
+app:
+  receiver-chat-id: 0
+  sender-chat-id: 1

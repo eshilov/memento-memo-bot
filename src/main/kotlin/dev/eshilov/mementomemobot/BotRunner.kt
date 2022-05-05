@@ -5,9 +5,11 @@ import dev.eshilov.mementomemobot.process.UpdateProcessingSubmitter
 import dev.eshilov.mementomemobot.telegram.model.Update
 import org.springframework.boot.ApplicationArguments
 import org.springframework.boot.ApplicationRunner
+import org.springframework.context.annotation.Profile
 import org.springframework.stereotype.Component
 
 @Component
+@Profile("!test")
 class BotRunner(
     private val updateFetcher: UpdateFetcher,
     private val updateProcessingSubmitter: UpdateProcessingSubmitter
