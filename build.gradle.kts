@@ -7,6 +7,7 @@ plugins {
 	kotlin("plugin.spring") version "1.6.21"
 	kotlin("plugin.jpa") version "1.6.21"
 	kotlin("kapt") version "1.6.21"
+	`copy-spring-config-metadata`
 }
 
 group = "dev.eshilov"
