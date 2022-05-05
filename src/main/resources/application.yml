@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/memento
-    username: memento
-    password: memento
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:memento}
+    username: ${DB_USER:memento}
+    password: ${DB_PASS:memento}
 
 app:
   batch-size: 1
