@@ -1,7 +1,4 @@
-on:
-  push:
-    branches:
-      - pipeline
+on: [push]
 
 jobs:
   build:
