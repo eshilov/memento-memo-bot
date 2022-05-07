@@ -20,6 +20,12 @@ jobs:
           path: ~/.gradle/wrapper
           key: ${{ runner.os }}-gradle-wrapper-${{ hashFiles('**/gradle/wrapper/gradle-wrapper.properties') }}
 
+      - name: Setup java
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: corretto
+
       - name: Build project
         run: ./gradlew build
 
