@@ -1,4 +1,4 @@
-FROM arm64v8/amazoncorretto:17
+FROM amazoncorretto:17-alpine
 
 WORKDIR /app
 
