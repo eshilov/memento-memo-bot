@@ -61,7 +61,7 @@ jobs:
         run: heroku container:login
 
       - name: Build and push image to Heroku
-        run: heroku container:push --app memento-memo-bot worker
+        run: heroku container:push --app memento-memo-bot web
 
       - name: Release image on Heroku
-        run: heroku container:release --app memento-memo-bot worker
+        run: heroku container:release --app memento-memo-bot web
