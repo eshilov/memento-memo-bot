@@ -37,6 +37,7 @@ class CheckResponseUpdateProcessor(
         val meme = findMemeForCheckResponseUpdate(update)
         meme?.let {
             markMemeAsChecked(meme)
+            sendKeepMemeMessageToReceiver(meme)
             notifySenderThatMemeViewed(meme)
         }
     }
@@ -90,6 +91,15 @@ class CheckResponseUpdateProcessor(
             DeleteMessageRequest(
                 chatId = appProps.receiverChatId,
                 messageId = getCheckMessageId(update)
+            )
+        )
+    }
+
+    private fun sendKeepMemeMessageToReceiver(meme: MemeEntity) {
+        botApi.sendMessage(
+            SendMessageRequest(
+                chatId = appProps.receiverChatId,
+                text = "Сохраним на всякий случай ${meme.content}"
             )
         )
     }
